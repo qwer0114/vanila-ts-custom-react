@@ -9,6 +9,7 @@ let rootElement: VNode | null = null;
 function renderComponent() {
   if (rootContainer && rootElement) {
     const newVNode = rootElement;
+
     if (oldVNode) {
       updateElement(rootContainer, newVNode, oldVNode);
     } else {
