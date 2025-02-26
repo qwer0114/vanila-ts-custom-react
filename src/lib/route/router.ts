@@ -42,7 +42,7 @@ class Router {
 
     if (currentComponent) {
       const root = document.getElementById("app")!;
-      createRoot(root).render(() => currentComponent.component);
+      createRoot(root).render(currentComponent.component);
     }
     console.error("존재하지 않는 route");
   }

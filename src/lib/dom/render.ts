@@ -4,11 +4,11 @@ import createElement from "../dom/client";
 
 let oldVNode: VNode | null = null;
 let rootContainer: Element | null = null;
-let rootElement: (() => VNode) | null = null;
+let rootElement: VNode | null = null;
 
 function renderComponent() {
   if (rootContainer && rootElement) {
-    const newVNode = rootElement();
+    const newVNode = rootElement;
     if (oldVNode) {
       updateElement(rootContainer, newVNode, oldVNode);
     } else {
@@ -21,7 +21,7 @@ function renderComponent() {
 function createRoot(container: Element) {
   rootContainer = container;
   return {
-    render: (element: () => VNode) => {
+    render: (element: VNode) => {
       rootElement = element;
       renderComponent();
     },
