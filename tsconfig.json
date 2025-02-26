@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "jsx": "preserve",
+    "jsxImportSource": "@/lib/jsx",
     "target": "ES2020",
     "useDefineForClassFields": true,
     "module": "ESNext",
@@ -9,8 +11,8 @@
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
     "isolatedModules": true,
-    "moduleDetection": "force",
     "noEmit": true,
 
     /* Linting */
@@ -18,10 +20,10 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true,
-
-    "jsx": "react-jsx",
-    "jsxImportSource": "@/lib/jsx"
+    /* Path alias */
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   },
-  "include": ["src"]
+  "include": ["src", "global.d.ts"]
 }
